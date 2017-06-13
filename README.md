@@ -1,8 +1,8 @@
 # Udacity-fsnd-log-analysis
 Udacity Full Stack NanoDegree Log Analysis Project
 
-### Project Overview
->In this project, you'll work with data that could have come from a real-world web application, with fields representing information that a web server would record, such as HTTP status codes and URL paths. The web server and the reporting tool both connect to the same database, allowing information to flow from the web server into the report.
+### Project Description
+>Your task is to create a reporting tool that prints out reports (in plain text) based on the data in the database. This reporting tool is a Python program using the psycopg2 module to connect to the database.
   
 #### Setting up the database and Creating Views:
 
@@ -18,7 +18,7 @@ Udacity Full Stack NanoDegree Log Analysis Project
 create view numviews_view as (select title, author, count(*) as num from articles,log where log.path=CONCAT('/article/',articles.slug) group by articles.title,articles.author order by num desc);
   ```
 #### Running the queries:
-  1. From the vagrant directory inside the virtual machine,run logs.py using:
+  Run logs.py using:
   ```
     $ python logs.py
   ```
