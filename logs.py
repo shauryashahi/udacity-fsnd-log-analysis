@@ -18,8 +18,8 @@ num DESC limit 3; '''
 
 # 2. Who are the most popular article authors of all time?
 query2 = ''' select authors.name, sum(numviews_view.num) as views from
-numviews_view,authors where authors.id=numviews_view.author group by authors.name
-order by views desc '''
+numviews_view,authors where authors.id=numviews_view.author group by
+authors.name order by views desc '''
 
 # 3. On which days did more than 1% of requests lead to errors?
 query3 = ''' select * from (select date(time),round(100.0*sum(case log.status
